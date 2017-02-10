@@ -13,3 +13,5 @@ it is best practice to always run JS in strict mode.
 
 `TypeError` is an illegal/impossible action request error and only occurs
 on successful scope resolution.
+
+## 02 - Lexical Scope
