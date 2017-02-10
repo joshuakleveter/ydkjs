@@ -1,0 +1,11 @@
+{
+  "name": "ydkjs",
+  "version": "0.0.0",
+  "description": "YDKJS Notes and Demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joshua Kleveter",
+  "license": "UNLICENSED"
+}
