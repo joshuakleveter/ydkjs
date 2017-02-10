@@ -1,5 +1,7 @@
 # Scope & Closures
 
+## 01 - What is Scope
+
 Left-hand side assignments are for variable _assignment_.
 Right-hand side assignments are for varaible _retreival_.
 
