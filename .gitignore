@@ -1,0 +1,4 @@
+# Files to ignore
+
+## Any demo.* Files
+**/**/demo.*
