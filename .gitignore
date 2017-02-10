@@ -1,3 +1,8 @@
+# Directories to ignore
+
+## Node Modules
+**/node_modules
+
 # Files to ignore
 
 ## Any demo.* Files
