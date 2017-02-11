@@ -104,3 +104,75 @@ a.forEach(function printValue(value) {
 ```
 
 Not difficult, and it makes for better quality code.
+
+## Immediately Invoked Function Expressions
+
+Though IIFEs are usually an anonymous function, they will likewise benefit
+from using a named function.
+
+There are two primary syntax forms for the IIFE.
+
+This:
+
+```javascript
+(function iife() {
+    // run code here
+})();
+```
+
+And this:
+
+```javascript
+(function iife() {
+    // run code here
+}());
+```
+
+Note the difference in the invoking `()` pair. This makes no change to
+functionality and is a stylistic choice.
+
+Note that we _can_ pass the global scope into the IIFE as an argument.
+This allows us to have a named value to distingush the global scope from
+the local scope in the IIFE.
+
+There is also another IIFE syntax that you may see on occasion
+(Used by the UMD project):
+
+```javascript
+let myArg = 1;
+
+(function iife(func) {
+    func(myArg);
+})(function func(param) {
+    // define code here
+});
+```
+
+## Blocks as Scopes
+
+The primary concepts behind block scoping is to keep variable
+declarations as close in locality to where they are used as possible.
+
+_On the surface_ JavaScript has no way to implement block scoping.
+If we dig a bit there are some ways about it, though.
+
+For instance:
+
+The ES3 spec defines that the varaible declaration in the `catch()` statement
+of a `try/catch` block it to be block-scoped to the `catch()` block.
+This is used by transpilers for block-scoping functionality.
+
+As of ES6 we have the `let` keyword for varaible declaration. Variables
+that are declared with `let` are block-scoped to the surrounding block
+(usually a `{ .. }` pair).
+
+One of the best examples of the benefit of using `let` is with a `for() { .. }`
+loop. The incrementer variable will be scoped to the loop itself rather than
+the surrounding scope as it would be if you used `var`.
+
+ES6 also gives us the `const` keyword for declaring constant values. Those
+values are block-scoped as well.
+
+In terms of best practice we can use the `var` and `let` keywords side-by-side
+depending on the current need for function or block scoping. `let` is not
+an outright replacement for `var`.
