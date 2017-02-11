@@ -72,3 +72,35 @@ scope.
 
 A function is a declaration _only if_ the `function` keyword is the first thing
 in the line of code. Anything else is an expression.
+
+## Anonymous Functions
+
+Often seen in JavaScript callbacks are _anonymous function expressions_.
+Such as:
+
+```javascript
+var a = [0, 1, 2, 3, 4];
+
+a.forEach(function(value) {
+    console.log(value);
+});
+```
+
+The function passed into the `.forEach()` method is anonymous.
+Though this syntax _is_ valid and rather popular it does have a few drawbacks:
+
+- There's no function name to display in a stack trace.
+- You cannot call the function recursivley without using deprecated methods.
+- Your code is less legible as the function name should describe what it does.
+
+As such, you're best of naming those inline function expressions; like so:
+
+```javascript
+var a = [0, 1, 2, 3, 4];
+
+a.forEach(function printValue(value) {
+    console.log(value);
+});
+```
+
+Not difficult, and it makes for better quality code.
