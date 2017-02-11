@@ -1,6 +1,7 @@
 {
     "extends": "google",
     "rules": {
+        "linebreak-style": 0,
         "react/jsx-sort-prop-types": 0
     }
 }
